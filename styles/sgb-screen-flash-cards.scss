@@ -1,0 +1,44 @@
+.card {
+	background-color: #47C2EA;
+	height: 250px;
+	margin: 5px;
+	cursor: pointer;
+	transform-style: preserve-3d;
+	transition: all 0.3s ease 0s;
+}
+
+.card.flipped {
+	transform: rotateX(180deg);
+}
+
+.reflip {
+	transform: rotateX(180deg);
+}
+
+.center-text {
+	align:center; 
+}
+
+.large-icon {
+	font-size: 300%; 
+}
+
+.center-div {
+	position:relative; 
+	top:180px;
+}
+
+.relocate-text {
+	position:relative; 
+	bottom: 60px;
+}
+
+.relocate-icon {
+	position:relative; 
+	top: 170px;
+}
+
+.relocate-title {
+	position:relative; 
+	top: 160px; 
+}
