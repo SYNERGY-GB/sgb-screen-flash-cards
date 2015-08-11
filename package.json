@@ -1,0 +1,24 @@
+{
+  "name": "sgb-screen-flash-cards",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/sgb-screen-flash-cards.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SYNERGY-GB/sgb-screen-flash-cards"
+  },
+  "author": "Luis Miglietti <luis.migliett@synergy-gb.com>",
+  "license": "Propietary",
+  "bugs": {
+    "url": "https://github.com/SYNERGY-GB/sgb-screen-flash-cards/issues"
+  },
+  "homepage": "https://github.com/SYNERGY-GB/sgb-screen-flash-cards",
+  "devDependencies": {
+    "browserify": "^9.0.3",
+    "gulp": "^3.9.0",
+    "vinyl-transform": "^1.0.0"
+  }
+}
