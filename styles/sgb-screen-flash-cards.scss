@@ -4,41 +4,34 @@
 	margin: 5px;
 	cursor: pointer;
 	transform-style: preserve-3d;
-	transition: all 0.3s ease 0s;
+	transition: all 0.9s ease 0s;
 }
 
-.card.flipped {
-	transform: rotateX(180deg);
-}
-
-.reflip {
-	transform: rotateX(180deg);
+.push-icon {
+	position:relative; 
+	top: 40px; 
 }
 
 .center-text {
-	align:center; 
+	text-align: center;
 }
 
 .large-icon {
-	font-size: 300%; 
+	font-size: 250%; 
 }
 
-.center-div {
+.center-card {
 	position:relative; 
 	top:180px;
 }
 
-.relocate-text {
-	position:relative; 
-	bottom: 60px;
+
+.card.flipped-vertical {
+	-webkit-transform: rotateX(180deg);
+	transform: rotateX(180deg);
 }
 
-.relocate-icon {
-	position:relative; 
-	top: 170px;
-}
-
-.relocate-title {
-	position:relative; 
-	top: 160px; 
+.card.flipped-horizontal {
+	-webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
 }

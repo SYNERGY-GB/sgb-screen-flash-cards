@@ -6,35 +6,44 @@ angular.module('sgb-screen-flash-cards', ['megazord'])
 
         _screen.initialize($scope, _screenParams);
         $scope.cards = $stateParams.data;
-        var selectedCard = null;
-        var WAIT = false;
-        $scope.rotate = false; 
+        $scope.flipped = false; 
+        $scope.backCard = false; 
+        $scope.changeCard = false; 
         $scope.index = 0; 
-        $scope.content = {
-        	titleToShow : $scope.cards[0].title,
-        	textToShow : $scope.cards[0].text_1
-        }
+        $scope.currentCard = angular.copy($scope.cards[$scope.index]);
 
-        $scope.flip = function(index) {
-      		$scope.rotate = !$scope.rotate;
-      		$scope.content.textToShow = $scope.rotate ? $scope.cards[index].text_2 : $scope.cards[index].text_1; 
-      		//var myEl = angular.element(document.querySelector('.no-rotate'));
-			//myEl.removeClass('.flipped');
-      		//flip(card, 20); 
+    	$scope.waitAnim = function() {
+    		$timeout(function() {		
+    			$scope.changeCard = false;  
+			}, 270);
     	}
 
-    	function flip(card, i, callback) {
-      		$timeout(function() {
-        		card.isFlipped = false;
-        		WAIT = false;
-        		if (callback) callback();
-      		}, 10 * (i || 30) );
+       $scope.flip = function() {
+        	$scope.flipped = true
+        	$timeout(function() {
+        	 	$scope.flipped=false;
+        	 	$scope.backCard = !$scope.backCard;
+			 }, 270);
     	}
 
+    	$scope.animate = function() {
+    		$scope.currentCard.hide = true; 
+    	    $scope.flipped = false; 
+    	    $scope.changeCard = true; 
+    	}
 
-        //$scope.templateType = _screenParams.templateType; 
+    	$scope.previousCard = function () {
+ 			$scope.animate(); 
+			$scope.index = $scope.index==0 ? $scope.cards.length-1 : $scope.index-1;
+    	    $scope.currentCard = angular.copy($scope.cards[$scope.index]);
+    		$scope.waitAnim(); 
+    	}	
 
-        //Delete after mz framework gets updated
-        //$scope.screenType = "sgb-screen-detail";
+    	$scope.nextCard = function () {
+    		$scope.animate(); 
+    		$scope.index =  $scope.index == $scope.cards.length-1? 0 : $scope.index +1;
+			$scope.currentCard = angular.copy($scope.cards[$scope.index]);
+			$scope.waitAnim(); 
+    	}
 
-    }]); 
+    }]);
