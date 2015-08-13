@@ -1,34 +1,52 @@
 <ion-view view-title="{{ title | translate }}" class="appBackground">
     <ion-content>
-    <div class="center-card under">
-  		<div class="card padding" ng-show="currentCard && !currentCard.hide" 
-  			 ng-class="{'flipped-vertical': flipped, 'flipped-horizontal' : changeCard }" >
-  			<div class="row">
-	         	<div class="col col-offset-10 col-80 center-text" >
-	         		<h3>{{currentCard.title}}</h3>
-	         	</div>
-	         	<div class="col col-15 large-icon center-text"  ng-click="flip()">
-	         		<i class="icon ion-loop center-text"></i>
-	         	</div>
-	        </div>
-         	<div class="row">
-         		<div class="col push-icon col-10 large-icon" ng-click="previousCard()">
-         		 	<i class="icon ion-arrow-left-b"></i>
-         		</div>
-	         	<div class="col col-80" ng-show="!backCard">
-	         		<p>{{currentCard.text_1}}</p>
-	         	</div>
-	           	<div class="col col-80" ng-show="backCard">
-	         		<p>{{currentCard.text_2}}</p>
-	         	</div>
-	            <div class="col push-icon col-10 large-icon" ng-click="nextCard()">
-         		 	<i class="icon ion-arrow-right-b"></i>
-         		</div>
-         	</div>
-      	</div>
-      	
-    </div>
-    
+
+      <flipper class="center-card row" flipped="flipped" vertical>
+
+        <front>
+          <div class="row">
+            <div class="center-text col col-80 col-offset-10">
+              <h3> {{currentCard.title}} </h3>
+            </div>
+            <div class="col col-10 large-icon top-corner-right center-text"  ng-click="flip()">
+              <i class="icon ion-loop center-text"></i>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col push-icon col-10 large-icon" ng-click="previousCard()">
+              <i class="icon ion-arrow-left-b"></i>
+            </div>
+            <div class="col col-80">
+              <p>{{currentCard.text_1}}</p>
+            </div>
+            <div class="col push-icon col-10 top-corner-right large-icon" ng-click="nextCard()">
+              <i class="icon ion-arrow-right-b"></i>
+            </div>
+          </div>
+        </front>
+
+        <back>
+          <div class="row">
+            <div class="center-text col col-80 col-offset-10">
+              <h3> {{currentCard.title}} </h3>
+            </div>
+            <div class="col col-10 large-icon top-corner-right center-text"  ng-click="flip()">
+              <i class="icon ion-loop center-text"></i>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col push-icon col-10 large-icon" ng-click="previousCard()">
+              <i class="icon ion-arrow-left-b"></i>
+            </div>
+            <div class="col col-80">
+              <p>{{currentCard.text_2}}</p>
+            </div>
+            <div class="col push-icon col-10 top-corner-right large-icon" ng-click="nextCard()">
+              <i class="icon ion-arrow-right-b"></i>
+            </div>
+          </div>
+        </back>
+      </flipper>
     </ion-content>
 </ion-view>
 
