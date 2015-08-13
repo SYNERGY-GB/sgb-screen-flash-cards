@@ -1,18 +1,7 @@
-.card {
-	background-color: #47C2EA;
-	height: 250px;
-	margin: 5px;
-	cursor: pointer;
-	-webkit-transform-style: preserve3d;
-	transform-style: preserve-3d;
-	transition: all 0.9s ease 0s;
-}
-
 .top-corner-right {
 	position:relative; 
-	bottom: 10px; 
+	bottom: 5px; 
 }
-
 
 .push-icon {
 	position:relative; 
@@ -32,6 +21,49 @@
 	position:relative; 
 	top:120px;
 }
+
+.card {
+	background:#19489E;
+	height: 250px;
+	margin: 5px;
+	cursor: pointer;
+	transform-style: preserve-3d;
+	transition: all 0.8s ease 0s;
+}
+
+.card.flipped {
+	transform: rotateX(180deg);
+}
+
+.reflip {
+	transform: rotateX(180deg);
+}
+
+.relocate-text {
+	position:relative; 
+	top: 80px;
+}
+
+.relocate-icon {
+	position:relative; 
+	top: 200px;
+}
+
+.relocate-title {
+	position:relative; 
+	top: 180px; 
+}
+
+/*.card {
+	background-color: #47C2EA;
+	height: 250px;
+	margin: 5px;
+	cursor: pointer;
+	-webkit-transform-style: preserve3d;
+	transform-style: preserve-3d;
+	transition: all 0.9s ease 0s;
+}
+
 
 .tile { 
 	color:white; 
@@ -75,13 +107,13 @@ flipper {
             z-index:2;
             background:#19489E;
 
-            /* front tile styles go here! */
+        
         }
 
         .back {
             background:#9E1919;
 
-            /* back tile styles go here! */
+          
         }
     }
 }
@@ -124,4 +156,4 @@ flipper[vertical] {
             transform:rotateX(0deg);
         }
     }
-}
+}*/
